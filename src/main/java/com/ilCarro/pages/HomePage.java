@@ -15,13 +15,20 @@ public class HomePage extends BasePage {
         assert isElementDisplayed(title);
         return this;
     }
-
-
     @FindBy(xpath = "//a[.=' Log in ']")
     WebElement loginLink;
 
     public LoginPage clickOnLoginLink() {
         click(loginLink);
         return new LoginPage(driver);
+    }
+
+    @FindBy(xpath = "//a[.=' Let the car work ']")
+    WebElement letCarWorkLink;
+
+    public CarPage clickOnLetCarLink() {
+        pause(500);
+        click(letCarWorkLink);
+        return new CarPage(driver);
     }
 }
